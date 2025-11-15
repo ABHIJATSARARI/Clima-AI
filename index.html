@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light dark" />
+    <title>CLIMA: AI Climate-Risk Simulator</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <script>
+      // This script must run first to prevent a flash of unstyled content.
+      if (localStorage.getItem('clima-theme') === 'dark' || (!('clima-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    </script>
+
+    <script>
+      // This configures Tailwind to use the 'class' strategy for dark mode.
+      // It must appear BEFORE the main Tailwind script.
+      tailwind.config = {
+        darkMode: 'class',
+      }
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <style>
+      body {
+        font-family: 'Inter', sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      .dark body {
+        background-color: #0f172a; /* slate-900 */
+      }
+      @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+      }
+      .animate-fade-in {
+        animation: fadeIn 0.5s ease-out forwards;
+      }
+      @keyframes slideUp {
+        from { transform: translateY(20px); opacity: 0; }
+        to { transform: translateY(0); opacity: 1; }
+      }
+      .animate-slide-up {
+        animation: slideUp 0.5s ease-out forwards;
+        opacity: 0;
+      }
+       @keyframes layered-reveal {
+        from { opacity: 0; transform: scale(0.8) translateY(10px); }
+        to { opacity: 1; transform: scale(1) translateY(0); }
+      }
+      .logo-part-1 {
+        animation: layered-reveal 1.5s cubic-bezier(0.25,0.1,0.25,1) 0.5s forwards;
+        opacity: 0;
+      }
+      .logo-part-2 {
+         animation: layered-reveal 1.5s cubic-bezier(0.25,0.1,0.25,1) 0.8s forwards;
+         opacity: 0;
+      }
+      @keyframes splash-fade-out {
+        from { opacity: 1; }
+        to { opacity: 0; pointer-events: none; }
+      }
+      @keyframes pulse-gentle {
+        0%, 100% { transform: scale(1); opacity: 0.9; }
+        50% { transform: scale(1.05); opacity: 1; }
+      }
+      .animate-pulse-gentle {
+        animation: pulse-gentle 2.5s ease-in-out infinite;
+      }
+      @keyframes fade-scale-in {
+        from { opacity: 0; transform: scale(0.95) translateY(10px); }
+        to { opacity: 1; transform: scale(1) translateY(0); }
+      }
+      @keyframes generation-bars {
+        0%, 100% { transform: scaleY(0.4); }
+        50% { transform: scaleY(1); }
+      }
+      .generation-bar {
+        animation: generation-bars 1.2s ease-in-out infinite;
+      }
+      /* New animation for the projection chart lines */
+      @keyframes draw-line {
+        to { stroke-dashoffset: 0; }
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.29.1"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>

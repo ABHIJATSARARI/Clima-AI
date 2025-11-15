@@ -1,0 +1,7 @@
+{
+  "name": "CLIMA: AI Climate-Risk Simulator",
+  "description": "An AI-powered application that provides data-driven local climate-risk analysis and personalized action plans for home, farming, and community preparedness. It includes gamified challenges to help reduce your carbon footprint.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
