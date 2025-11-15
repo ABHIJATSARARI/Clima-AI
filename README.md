@@ -1,6 +1,6 @@
 
 <div align="center">
-  <img src="./.github/assets/clima-logo-animation.gif" alt="CLIMA.AI Animated Logo" width="150">
+  <img src="logo.gif" alt="CLIMA.AI Animated Logo" width="150">
   <h1>CLIMA.AI</h1>
   <p><strong>Your Personal AI Climate Risk Advisor</strong></p>
   
@@ -79,14 +79,13 @@ To get a local copy up and running, follow these simple steps.
 
 ### Prerequisites
 
--   A modern web browser that supports Geolocation.
 -   A Google Gemini API Key. You can get one from [Google AI Studio](https://ai.google.dev/).
 
 ### Installation
 
 1.  **Clone the repo:**
     ```sh
-    git clone https://github.com/your-username/clima-ai.git
+    git clone https://github.com/abhijatsarari/clima-ai.git
     cd clima-ai
     ```
 
