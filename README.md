@@ -1,6 +1,6 @@
 
 <div align="center">
-  <img src="logo.gif" alt="CLIMA.AI Animated Logo" width="150">
+  <img src="logo.gif" alt="CLIMA.AI Animated Logo" width="250">
   <h1>CLIMA.AI</h1>
   <p><strong>Your Personal AI Climate Risk Advisor</strong></p>
   
